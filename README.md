@@ -9,9 +9,12 @@ This setup assumes that the current computer is on Windows.
 2. Clone this repository in your choice of folder.
 3. Open an Anaconda Prompt or Anaconda PowerShell Prompt in your cloned repo and run the following commands to install the necessary libraries. Agree to each prompt which prompted.
    
-   ```conda install -c conda-forge pyomo shapely rasterio geopandas```
-4. Download GPLK for Windows from [this link](https://winglpk.sourceforge.net/#download), and copy the glpk-#.### folder into C:\\.
-5. You are now free to run the Jupyter Notebook (solution.ipynb).
+   ```conda env create -f environment.yml```
+4. Run the following command to set up the environment in Jupyter Notebook:
+
+   ```python -m ipykernel install --user --name=testenv```
+6. Download GPLK for Windows from [this link](https://winglpk.sourceforge.net/#download), and copy the glpk-#.### folder into C:\\.
+7. You are now free to run the Jupyter Notebook (solution.ipynb). Select the kernel to be "testenv".
 
 ## Credits / References
 Much of my work would not have been possible were it not for the following resources and many others:
