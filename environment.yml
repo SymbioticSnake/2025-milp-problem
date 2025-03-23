@@ -1,0 +1,10 @@
+name: testenv
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - gdal
+  - geopandas
+  - rasterio
+  - shapely
+  - pyomo
