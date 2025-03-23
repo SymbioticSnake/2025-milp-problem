@@ -1,6 +1,7 @@
 import geopandas as gpd
 import numpy as np
 import shapely as shp
+import pyomo.environ as pyo
 
 def check_adjacent(coords1, coords2):
     match = False; currIdx = 0
@@ -47,3 +48,8 @@ for i in range(100-count):
         if check_adjacent(coordinates[i], coordinates[(i+j+1)%100]): adjacents.append((i+j+1)%100)
     adjacency_list.append(adjacents)
 
+model = pyo.ConcreteModel()
+model.data = pyo.Set(initialize=parcels)
+
+
+solver = pyo.SolverFactory('glpk')
